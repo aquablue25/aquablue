@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aqua Blue — Rethinking the water in every shower.</title>
+  <title>Aqua Blue — Rethinking Shower Water</title>
 
   <meta
     name="description"
-    content="Aqua Blue is developing a new generation of shower water filtration products, combining practical filtration, thoughtful design and reliable manufacturing."
+    content="Aqua Blue is developing a new generation of shower water filtration products — combining practical filtration, thoughtful design and reliable manufacturing."
   >
 
   <style>
+
     :root {
-      --blue: #087ea4;
+      --blue: #0b8fbd;
       --blue-dark: #07516b;
-      --blue-light: #eaf8fc;
+      --blue-light: #e9f8fc;
       --text: #10242d;
-      --muted: #60747d;
+      --muted: #667982;
+      --border: #dcebef;
+      --background: #f8fcfd;
       --white: #ffffff;
-      --border: #dce9ed;
-      --background: #f7fbfc;
-      --max-width: 1160px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -43,8 +43,9 @@
         Helvetica,
         Arial,
         sans-serif;
+
       color: var(--text);
-      background: var(--white);
+      background: var(--background);
       line-height: 1.6;
     }
 
@@ -54,25 +55,31 @@
     }
 
     .container {
-      width: min(100% - 40px, var(--max-width));
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
 
-    header {
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
+
+      background: rgba(255,255,255,0.94);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(220, 233, 237, 0.8);
+
+      border-bottom: 1px solid rgba(220,235,239,0.8);
     }
 
-    .nav {
+    .nav-inner {
       height: 76px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -81,124 +88,166 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 21px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      gap: 11px;
+
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
     }
 
     .logo-mark {
       width: 34px;
       height: 34px;
+
       border-radius: 50%;
-      background: linear-gradient(145deg, #15a9d2, #07516b);
+
+      background:
+        linear-gradient(
+          145deg,
+          #21b9e3,
+          #07516b
+        );
+
       position: relative;
       overflow: hidden;
     }
 
-    .logo-mark::after {
+    .logo-mark::before {
       content: "";
+
       position: absolute;
-      width: 20px;
-      height: 20px;
+
+      width: 18px;
+      height: 18px;
+
       background: white;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      left: 7px;
-      top: 5px;
-      opacity: 0.9;
+
+      border-radius: 50%;
+
+      top: 7px;
+      left: 8px;
+
+      opacity: 0.95;
     }
 
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 30px;
+
+      font-size: 14px;
+      font-weight: 600;
+      color: #48616a;
     }
 
-    nav a {
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
+    .nav-links a {
       transition: color 0.2s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: var(--blue);
     }
 
-    .nav-button {
-      background: var(--blue);
-      color: white !important;
-      padding: 10px 18px;
-      border-radius: 8px;
-    }
 
-    .nav-button:hover {
-      background: var(--blue-dark);
-    }
-
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 760px;
+
       padding-top: 76px;
+
       display: flex;
       align-items: center;
+
       background:
         radial-gradient(
-          circle at 75% 40%,
-          rgba(15, 164, 205, 0.13),
+          circle at 75% 35%,
+          rgba(21,169,210,0.13),
           transparent 34%
         ),
-        linear-gradient(180deg, #f8fdff 0%, #ffffff 100%);
-      overflow: hidden;
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f3fbfd 100%
+        );
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
+
       align-items: center;
+
+      gap: 70px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--blue);
-      font-size: 13px;
+
+      padding: 7px 12px;
+
+      background: var(--blue-light);
+
+      border-radius: 30px;
+
+      color: var(--blue-dark);
+
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 1.4px;
+
+      letter-spacing: 0.7px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+
+      margin-bottom: 25px;
     }
 
     .eyebrow::before {
       content: "";
-      width: 28px;
-      height: 2px;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
       background: var(--blue);
     }
 
-    h1 {
-      font-size: clamp(48px, 6vw, 78px);
+    .hero h1 {
+      max-width: 650px;
+
+      font-size: clamp(48px, 6vw, 76px);
+
       line-height: 1.03;
+
       letter-spacing: -3px;
-      max-width: 720px;
-      margin-bottom: 26px;
+
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
     }
 
     .hero-text {
-      max-width: 590px;
-      font-size: 19px;
+      max-width: 620px;
+
       color: var(--muted);
-      margin-bottom: 34px;
+
+      font-size: 19px;
+
+      line-height: 1.75;
+
+      margin-bottom: 35px;
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: flex;
-      align-items: center;
-      gap: 14px;
+      gap: 13px;
+
       flex-wrap: wrap;
     }
 
@@ -206,221 +255,188 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 21px;
+
+      min-height: 48px;
+
+      padding: 0 21px;
+
       border-radius: 8px;
-      font-weight: 600;
+
       font-size: 14px;
-      transition: all 0.2s ease;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     .button-primary {
       background: var(--blue);
+
       color: white;
+
+      box-shadow:
+        0 10px 25px rgba(11,143,189,0.2);
     }
 
     .button-primary:hover {
-      background: var(--blue-dark);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 14px 30px rgba(11,143,189,0.27);
     }
 
     .button-secondary {
       border: 1px solid var(--border);
-      color: var(--text);
+
       background: white;
+
+      color: var(--blue-dark);
     }
 
     .button-secondary:hover {
-      border-color: var(--blue);
-      color: var(--blue);
+      transform: translateY(-2px);
+
+      border-color: #b9dce6;
     }
 
-    /* PRODUCT VISUAL */
+
+    /* =========================
+       PRODUCT VISUAL
+    ========================= */
 
     .product-stage {
-      height: 540px;
-      position: relative;
+      min-height: 500px;
+
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+
+      position: relative;
     }
 
-    .glow {
+    .product-glow {
       position: absolute;
-      width: 410px;
-      height: 410px;
+
+      width: 390px;
+      height: 390px;
+
       border-radius: 50%;
-      background: rgba(26, 169, 210, 0.1);
-      filter: blur(2px);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(24,180,222,0.16),
+          rgba(24,180,222,0)
+        );
     }
 
     .shower {
-      width: 270px;
-      height: 430px;
+      width: 150px;
+      height: 310px;
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #d9edf2
+        );
+
+      border: 1px solid #c8e1e7;
+
+      box-shadow:
+        0 35px 70px rgba(7,81,107,0.15),
+        inset 3px 3px 8px rgba(255,255,255,0.9);
+
       position: relative;
-      z-index: 2;
+
+      transform: rotate(7deg);
     }
 
-    .shower-head {
-      position: absolute;
-      top: 30px;
-      left: 54px;
-      width: 162px;
-      height: 110px;
-      border-radius: 55px 55px 28px 28px;
-      background: linear-gradient(145deg, #ffffff, #d9e9ee);
-      border: 1px solid #c5dce3;
-      box-shadow: 0 24px 50px rgba(7, 81, 107, 0.12);
-      transform: rotate(-8deg);
-    }
-
-    .shower-head::before {
+    .shower::before {
       content: "";
+
       position: absolute;
-      width: 80px;
-      height: 25px;
+
+      width: 95px;
+      height: 20px;
+
       border-radius: 50%;
-      background: #b9dce7;
-      bottom: 14px;
-      left: 41px;
-      opacity: 0.75;
+
+      background: #c4e4eb;
+
+      top: 22px;
+      left: 27px;
     }
 
-    .filter-body {
+    .shower::after {
+      content: "";
+
       position: absolute;
-      top: 130px;
-      left: 104px;
-      width: 76px;
-      height: 210px;
-      border-radius: 38px;
-      background: linear-gradient(
-        90deg,
-        #d9edf2,
-        #ffffff 40%,
-        #c9e2e9
-      );
-      border: 1px solid #c1dce4;
-      box-shadow: 0 30px 55px rgba(7, 81, 107, 0.13);
+
+      width: 80px;
+      height: 190px;
+
+      border-radius: 18px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #eaf8fb,
+          #bde4ed
+        );
+
+      border: 1px solid #b9dbe3;
+
+      top: 60px;
+      left: 34px;
+
+      box-shadow:
+        inset 0 0 25px rgba(11,143,189,0.08);
     }
 
-    .filter-core {
+    .water-drop {
       position: absolute;
-      top: 38px;
-      left: 16px;
-      width: 42px;
-      height: 125px;
-      border-radius: 22px;
-      background: linear-gradient(
-        180deg,
-        #8bd8ed,
-        #218fb3
-      );
+
+      width: 22px;
+      height: 29px;
+
+      border-radius:
+        60% 60% 60% 0;
+
+      background: var(--blue);
+
+      transform: rotate(-45deg);
+
       opacity: 0.8;
     }
 
-    .filter-line {
-      position: absolute;
-      left: 20px;
-      right: 20px;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.8);
+    .drop-1 {
+      top: 90px;
+      right: 75px;
     }
 
-    .filter-line.one {
-      top: 70px;
+    .drop-2 {
+      top: 145px;
+      right: 35px;
+
+      transform: scale(0.7) rotate(-45deg);
     }
 
-    .filter-line.two {
-      top: 95px;
+    .drop-3 {
+      bottom: 110px;
+      left: 60px;
+
+      transform: scale(0.55) rotate(-45deg);
     }
 
-    .filter-line.three {
-      top: 120px;
-    }
 
-    .connector {
-      position: absolute;
-      top: 330px;
-      left: 120px;
-      width: 44px;
-      height: 72px;
-      background: linear-gradient(90deg, #bcd8df, #f5fbfd);
-      border: 1px solid #bfd9e0;
-      border-radius: 5px 5px 15px 15px;
-    }
-
-    .water-drops {
-      position: absolute;
-      right: 0;
-      top: 130px;
-      width: 90px;
-      height: 240px;
-    }
-
-    .drop {
-      position: absolute;
-      width: 10px;
-      height: 18px;
-      border-radius: 50% 50% 50% 0;
-      background: #4fb8d7;
-      transform: rotate(-45deg);
-      opacity: 0.55;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .drop:nth-child(1) {
-      top: 10px;
-      left: 35px;
-    }
-
-    .drop:nth-child(2) {
-      top: 65px;
-      left: 15px;
-      animation-delay: 0.5s;
-    }
-
-    .drop:nth-child(3) {
-      top: 125px;
-      left: 45px;
-      animation-delay: 1s;
-    }
-
-    .drop:nth-child(4) {
-      top: 180px;
-      left: 20px;
-      animation-delay: 1.5s;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0) rotate(-45deg);
-      }
-
-      50% {
-        transform: translateY(-10px) rotate(-45deg);
-      }
-    }
-
-    .status-card {
-      position: absolute;
-      bottom: 55px;
-      left: 25px;
-      padding: 15px 18px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid var(--border);
-      box-shadow: 0 15px 40px rgba(7, 81, 107, 0.1);
-      font-size: 13px;
-      color: var(--muted);
-      z-index: 5;
-    }
-
-    .status-card strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    /* SECTIONS */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
       padding: 110px 0;
@@ -428,355 +444,633 @@
 
     .section-label {
       color: var(--blue);
+
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
+
+      letter-spacing: 1.4px;
+
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 15px;
+
+      margin-bottom: 18px;
     }
 
     .section-title {
+      max-width: 750px;
+
       font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.08;
+
+      line-height: 1.12;
+
       letter-spacing: -1.8px;
-      margin-bottom: 22px;
+
+      margin-bottom: 25px;
     }
 
     .section-intro {
-      color: var(--muted);
-      font-size: 17px;
       max-width: 700px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.8;
     }
 
-    /* CONCEPT */
+
+    /* =========================
+       CONCEPT
+    ========================= */
 
     .concept {
       background: white;
     }
 
     .concept-grid {
+      margin-top: 55px;
+
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 90px;
-      align-items: start;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
     }
 
-    .concept-text p {
-      color: var(--muted);
-      font-size: 17px;
-      margin-bottom: 18px;
-    }
+    .concept-card {
+      padding: 30px;
 
-    .principles {
-      display: grid;
-      gap: 15px;
-    }
-
-    .principle {
-      padding: 25px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+
+      border-radius: 14px;
+
       background: #fbfeff;
     }
 
-    .principle-number {
-      font-size: 12px;
+    .concept-number {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 9px;
+
+      background: var(--blue-light);
+
       color: var(--blue);
-      font-weight: 700;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      margin-bottom: 22px;
+    }
+
+    .concept-card h3 {
+      font-size: 19px;
+
       margin-bottom: 10px;
     }
 
-    .principle h3 {
-      font-size: 19px;
-      margin-bottom: 7px;
-    }
-
-    .principle p {
+    .concept-card p {
       color: var(--muted);
+
       font-size: 14px;
+
+      line-height: 1.7;
     }
 
-    /* PROBLEM */
+
+    /* =========================
+       PROBLEM
+    ========================= */
 
     .problem {
       background: var(--background);
     }
 
-    .problem-header {
-      margin-bottom: 55px;
-    }
-
     .problem-grid {
+      margin-top: 55px;
+
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 20px;
     }
 
     .problem-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 30px;
-    }
+      padding: 35px;
 
-    .icon {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: var(--blue-light);
-      color: var(--blue);
-      font-size: 20px;
-      margin-bottom: 22px;
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
     }
 
     .problem-card h3 {
-      font-size: 19px;
-      margin-bottom: 9px;
+      font-size: 21px;
+
+      margin-bottom: 13px;
     }
 
     .problem-card p {
       color: var(--muted);
-      font-size: 14px;
+
+      line-height: 1.75;
+
+      font-size: 15px;
     }
 
-    /* DEVELOPMENT */
+
+    /* =========================
+       DEVELOPMENT
+    ========================= */
 
     .development {
       background: white;
     }
 
-    .roadmap {
+    .development-grid {
       margin-top: 55px;
+
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--border);
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
     }
 
-    .roadmap-item {
-      padding: 28px 25px 10px 0;
-      border-right: 1px solid var(--border);
-      margin-right: 25px;
+    .development-step {
+      padding: 28px 22px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      background: #fbfeff;
     }
 
-    .roadmap-item:last-child {
-      border-right: none;
-      margin-right: 0;
-    }
+    .development-step strong {
+      display: block;
 
-    .roadmap-number {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    .roadmap-item h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .roadmap-item p {
-      color: var(--muted);
       font-size: 14px;
+
+      color: var(--blue);
+
+      margin-bottom: 11px;
     }
 
-    /* MANUFACTURING */
+    .development-step h3 {
+      font-size: 17px;
+
+      margin-bottom: 9px;
+    }
+
+    .development-step p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.65;
+    }
+
+
+    /* =========================
+       MANUFACTURING
+    ========================= */
 
     .manufacturing {
-      background: #062f3d;
+      background:
+        linear-gradient(
+          135deg,
+          #07516b,
+          #0b8fbd
+        );
+
       color: white;
     }
 
     .manufacturing .section-label {
-      color: #6ed5f2;
+      color: #9cecff;
     }
 
     .manufacturing .section-intro {
-      color: #b4cbd2;
+      color: rgba(255,255,255,0.78);
     }
 
     .manufacturing-grid {
-      margin-top: 55px;
+      margin-top: 50px;
+
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
     .manufacturing-card {
-      padding: 32px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      padding: 30px;
+
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.04);
+
+      background: rgba(255,255,255,0.09);
+
+      border: 1px solid rgba(255,255,255,0.16);
     }
 
     .manufacturing-card h3 {
-      font-size: 20px;
+      font-size: 18px;
+
       margin-bottom: 10px;
     }
 
     .manufacturing-card p {
-      color: #abc3cb;
+      color: rgba(255,255,255,0.72);
+
       font-size: 14px;
+
+      line-height: 1.7;
     }
 
-    /* CONTACT */
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
-      background: var(--blue-light);
+      background: var(--background);
+
       text-align: center;
     }
 
     .contact .section-intro {
-      margin: 0 auto 30px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .contact-email {
-      display: inline-block;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--blue-dark);
-      padding: 15px 22px;
+    .contact-card {
+      max-width: 720px;
+
+      margin: 40px auto 0;
+
+      padding: 28px;
+
       background: white;
-      border-radius: 9px;
+
       border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      text-align: left;
+
+      box-shadow:
+        0 18px 50px rgba(7,81,107,0.08);
+    }
+
+    .contact-person {
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+      padding-bottom: 25px;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .contact-avatar {
+      width: 58px;
+      height: 58px;
+
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          145deg,
+          #15a9d2,
+          #07516b
+        );
+
+      color: white;
+
+      font-size: 16px;
+
+      font-weight: 700;
+    }
+
+    .contact-person h3 {
+      font-size: 18px;
+
+      letter-spacing: 0.3px;
+
+      margin-bottom: 3px;
+    }
+
+    .contact-person p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .contact-details {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 15px;
+
+      padding-top: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding: 15px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 10px;
+
+      background: #fbfeff;
+
+      transition:
+        all 0.2s ease;
+    }
+
+    .contact-item:hover {
+      border-color: var(--blue);
+
+      transform: translateY(-1px);
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+
+      flex-shrink: 0;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 8px;
+
+      background: var(--blue-light);
+
+      color: var(--blue);
+
+      font-size: 17px;
+    }
+
+    .contact-item small {
+      display: block;
+
+      color: var(--muted);
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.8px;
+
+      margin-bottom: 2px;
+    }
+
+    .contact-item span:last-child {
+      color: var(--text);
+
+      font-size: 14px;
+
+      font-weight: 600;
     }
 
     .development-note {
-      margin-top: 28px;
+      margin-top: 25px;
+
       color: var(--muted);
-      font-size: 13px;
+
+      font-size: 12px;
+
+      letter-spacing: 0.5px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      padding: 28px 0;
-      background: #041f29;
-      color: #91aeb7;
-      font-size: 13px;
+      padding: 30px 0;
+
+      background: #062f3d;
+
+      color: rgba(255,255,255,0.6);
+
+      font-size: 12px;
     }
 
-    .footer-content {
+    .footer-inner {
       display: flex;
-      justify-content: space-between;
+
       align-items: center;
+
+      justify-content: space-between;
+
       gap: 20px;
     }
 
     .footer-brand {
       color: white;
-      font-weight: 600;
+
+      font-weight: 700;
     }
 
-    /* MOBILE */
 
-    @media (max-width: 850px) {
-      nav {
-        display: none;
-      }
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 900px) {
 
       .hero {
         min-height: auto;
-        padding: 150px 0 80px;
+
+        padding-top: 150px;
+        padding-bottom: 100px;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
+
         gap: 30px;
       }
 
-      h1 {
-        letter-spacing: -2px;
-      }
-
       .product-stage {
-        height: 460px;
+        min-height: 400px;
       }
 
       .concept-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
       }
 
-      .problem-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .roadmap {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-      }
-
-      .roadmap-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        margin-right: 0;
-        padding-bottom: 25px;
+      .development-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .manufacturing-grid {
         grid-template-columns: 1fr;
       }
+
     }
 
-    @media (max-width: 560px) {
+
+    @media (max-width: 650px) {
+
       .container {
-        width: min(100% - 28px, var(--max-width));
+        width: min(
+          100% - 30px,
+          1120px
+        );
       }
 
-      section {
-        padding: 80px 0;
+      nav {
+        position: absolute;
+      }
+
+      .nav-inner {
+        height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+
+        letter-spacing: -2px;
       }
 
       .hero-text {
         font-size: 17px;
       }
 
-      .product-stage {
-        transform: scale(0.85);
-        margin: -25px 0;
+      section {
+        padding: 80px 0;
       }
 
-      .roadmap {
+      .section-title {
+        font-size: 36px;
+
+        letter-spacing: -1.2px;
+      }
+
+      .problem-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-content {
+      .development-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 22px;
+      }
+
+      .footer-inner {
         flex-direction: column;
+
         align-items: flex-start;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
 
-  <header>
-    <div class="container nav">
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav-inner">
 
       <a href="#top" class="logo">
+
         <span class="logo-mark"></span>
-        Aqua Blue
+
+        <span>Aqua Blue</span>
+
       </a>
 
-      <nav>
-        <a href="#concept">Concept</a>
-        <a href="#development">Development</a>
-        <a href="#manufacturing">Manufacturing</a>
-        <a href="#contact" class="nav-button">Contact</a>
-      </nav>
+
+      <div class="nav-links">
+
+        <a href="#concept">
+          Concept
+        </a>
+
+        <a href="#problem">
+          The Problem
+        </a>
+
+        <a href="#development">
+          Development
+        </a>
+
+        <a href="#manufacturing">
+          Manufacturing
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
 
     </div>
-  </header>
+
+  </nav>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <main id="top">
 
@@ -784,263 +1078,235 @@
 
       <div class="container hero-grid">
 
-        <div>
+
+        <div class="hero-content">
 
           <div class="eyebrow">
-            Product development
+            Product under development
           </div>
 
+
           <h1>
-            Rethinking the water in every shower.
+            Rethinking the
+            <span>water</span>
+            in every shower.
           </h1>
 
+
           <p class="hero-text">
-            Aqua Blue is developing a new generation of shower water
-            filtration products — combining practical filtration,
-            thoughtful design and reliable manufacturing.
+            Aqua Blue is developing a new generation of
+            shower water filtration products — combining
+            practical filtration, thoughtful design and
+            reliable manufacturing.
           </p>
 
-          <div class="hero-actions">
-            <a href="#concept" class="button button-primary">
+
+          <div class="hero-buttons">
+
+            <a
+              href="#concept"
+              class="button button-primary"
+            >
               Explore the concept
             </a>
 
-            <a href="#development" class="button button-secondary">
+            <a
+              href="#development"
+              class="button button-secondary"
+            >
               Our development
             </a>
+
           </div>
 
         </div>
 
 
-        <!-- PRODUCT CONCEPT VISUAL -->
 
         <div class="product-stage">
 
-          <div class="glow"></div>
+          <div class="product-glow"></div>
 
-          <div class="shower">
+          <div class="shower"></div>
 
-            <div class="shower-head"></div>
+          <div class="water-drop drop-1"></div>
 
-            <div class="filter-body">
+          <div class="water-drop drop-2"></div>
 
-              <div class="filter-core"></div>
-
-              <div class="filter-line one"></div>
-              <div class="filter-line two"></div>
-              <div class="filter-line three"></div>
-
-            </div>
-
-            <div class="connector"></div>
-
-          </div>
-
-
-          <div class="water-drops">
-            <span class="drop"></span>
-            <span class="drop"></span>
-            <span class="drop"></span>
-            <span class="drop"></span>
-          </div>
-
-
-          <div class="status-card">
-            <strong>Product under development</strong>
-            Research · Design · Testing
-          </div>
+          <div class="water-drop drop-3"></div>
 
         </div>
+
 
       </div>
 
     </section>
 
 
-    <!-- CONCEPT -->
 
-    <section id="concept" class="concept">
+    <!-- =========================
+         CONCEPT
+    ========================= -->
 
-      <div class="container concept-grid">
-
-        <div>
-
-          <div class="section-label">
-            The concept
-          </div>
-
-          <h2 class="section-title">
-            Better water starts with better thinking.
-          </h2>
-
-          <div class="concept-text">
-
-            <p>
-              Shower water is often treated as something people simply
-              have to accept. Aqua Blue is exploring a different approach:
-              creating a compact filtration system designed specifically
-              around the realities of everyday shower use.
-            </p>
-
-            <p>
-              Our goal is not to make another generic filter. We are
-              researching how filtration performance, water flow,
-              maintenance, installation and product design can work
-              together in one system.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="principles">
-
-          <div class="principle">
-
-            <div class="principle-number">
-              01 — PERFORMANCE
-            </div>
-
-            <h3>
-              Filtration first
-            </h3>
-
-            <p>
-              Researching practical filtration approaches that can
-              improve shower water quality without unnecessarily
-              restricting water flow.
-            </p>
-
-          </div>
-
-
-          <div class="principle">
-
-            <div class="principle-number">
-              02 — SIMPLICITY
-            </div>
-
-            <h3>
-              Designed for everyday use
-            </h3>
-
-            <p>
-              The product should be intuitive to install, simple to
-              maintain and compatible with common shower setups.
-            </p>
-
-          </div>
-
-
-          <div class="principle">
-
-            <div class="principle-number">
-              03 — ENGINEERING
-            </div>
-
-            <h3>
-              Form follows function
-            </h3>
-
-            <p>
-              Every design decision is evaluated against performance,
-              durability, manufacturability and the real conditions
-              of daily use.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- THE PROBLEM -->
-
-    <section class="problem">
+    <section
+      id="concept"
+      class="concept"
+    >
 
       <div class="container">
 
-        <div class="problem-header">
+        <div class="section-label">
+          The Concept
+        </div>
 
-          <div class="section-label">
-            The problem
+
+        <h2 class="section-title">
+          Better water starts with
+          better product thinking.
+        </h2>
+
+
+        <p class="section-intro">
+          Aqua Blue is exploring how shower water
+          filtration can become more practical,
+          more thoughtful and easier to integrate
+          into everyday life.
+        </p>
+
+
+        <div class="concept-grid">
+
+
+          <div class="concept-card">
+
+            <div class="concept-number">
+              01
+            </div>
+
+            <h3>
+              Practical filtration
+            </h3>
+
+            <p>
+              The product is being developed around
+              useful filtration principles rather than
+              unnecessary complexity.
+            </p>
+
           </div>
 
-          <h2 class="section-title">
-            Shower filtration has room to evolve.
-          </h2>
 
-          <p class="section-intro">
-            Existing solutions can be difficult to evaluate, inconvenient
-            to maintain or designed around compromises between filtration,
-            flow and usability. Aqua Blue is investigating how those
-            compromises can be reduced.
-          </p>
+
+          <div class="concept-card">
+
+            <div class="concept-number">
+              02
+            </div>
+
+            <h3>
+              Thoughtful design
+            </h3>
+
+            <p>
+              A shower filter should feel like a natural
+              part of the bathroom — compact, clean and
+              simple to use.
+            </p>
+
+          </div>
+
+
+
+          <div class="concept-card">
+
+            <div class="concept-number">
+              03
+            </div>
+
+            <h3>
+              Reliable manufacturing
+            </h3>
+
+            <p>
+              Product development includes material
+              selection, supplier research, testing and
+              manufacturing feasibility.
+            </p>
+
+          </div>
+
 
         </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROBLEM
+    ========================= -->
+
+    <section
+      id="problem"
+      class="problem"
+    >
+
+      <div class="container">
+
+        <div class="section-label">
+          The Problem
+        </div>
+
+
+        <h2 class="section-title">
+          Shower water is part of
+          everyday life.
+        </h2>
+
+
+        <p class="section-intro">
+          Yet many existing filtration products focus
+          on only one part of the experience. Aqua Blue
+          is investigating the complete product —
+          filtration, usability, design and maintenance.
+        </p>
 
 
         <div class="problem-grid">
 
+
           <div class="problem-card">
 
-            <div class="icon">
-              ≋
-            </div>
-
             <h3>
-              Water quality
+              Existing products can be complicated
             </h3>
 
             <p>
-              Shower water can contain substances that influence its
-              smell, appearance or overall user experience. The right
-              filtration technology needs to address specific water
-              conditions rather than make vague promises.
+              Some shower filtration solutions are bulky,
+              difficult to maintain or visually disconnected
+              from modern bathroom design.
             </p>
 
           </div>
 
 
+
           <div class="problem-card">
 
-            <div class="icon">
-              ◇
-            </div>
-
             <h3>
-              Product design
+              The user experience matters
             </h3>
 
             <p>
-              A filtration product should feel like part of the shower,
-              not an awkward accessory attached to it.
+              Filtration performance is only one part of
+              the equation. Installation, replacement,
+              maintenance and everyday usability also matter.
             </p>
 
           </div>
 
-
-          <div class="problem-card">
-
-            <div class="icon">
-              ↻
-            </div>
-
-            <h3>
-              Maintenance
-            </h3>
-
-            <p>
-              Filter replacement and routine maintenance should be
-              straightforward, predictable and easy to understand.
-            </p>
-
-          </div>
 
         </div>
 
@@ -1049,99 +1315,114 @@
     </section>
 
 
-    <!-- DEVELOPMENT -->
 
-    <section id="development" class="development">
+    <!-- =========================
+         DEVELOPMENT
+    ========================= -->
+
+    <section
+      id="development"
+      class="development"
+    >
 
       <div class="container">
 
         <div class="section-label">
-          Product development
+          Product Development
         </div>
 
+
         <h2 class="section-title">
-          From research to a real product.
+          From research to a
+          manufacturable product.
         </h2>
 
+
         <p class="section-intro">
-          Aqua Blue is following a structured development process.
-          The product will only move forward when its performance,
-          usability and manufacturing requirements have been validated.
+          Aqua Blue is currently in the research,
+          design and testing stage. The objective is
+          to develop a product that can move from
+          concept to reliable mass production.
         </p>
 
 
-        <div class="roadmap">
+        <div class="development-grid">
 
-          <div class="roadmap-item">
 
-            <div class="roadmap-number">
-              PHASE 01
-            </div>
+          <div class="development-step">
+
+            <strong>
+              01 / Research
+            </strong>
 
             <h3>
-              Research
+              Market & technology
             </h3>
 
             <p>
-              Study existing filtration technologies, shower systems,
-              customer needs and market gaps.
+              Studying existing filtration technologies,
+              user needs and competing product solutions.
             </p>
 
           </div>
 
 
-          <div class="roadmap-item">
 
-            <div class="roadmap-number">
-              PHASE 02
-            </div>
+          <div class="development-step">
+
+            <strong>
+              02 / Design
+            </strong>
 
             <h3>
-              Engineering
+              Product architecture
             </h3>
 
             <p>
-              Develop the product architecture, filtration system,
-              materials and connection concept.
+              Exploring form factor, materials,
+              filtration configuration and usability.
             </p>
 
           </div>
 
 
-          <div class="roadmap-item">
 
-            <div class="roadmap-number">
-              PHASE 03
-            </div>
+          <div class="development-step">
+
+            <strong>
+              03 / Testing
+            </strong>
 
             <h3>
-              Prototyping
+              Prototype evaluation
             </h3>
 
             <p>
-              Build prototypes and evaluate flow, durability,
-              filtration performance and usability.
+              Testing prototypes and evaluating
+              performance, durability and user experience.
             </p>
 
           </div>
 
 
-          <div class="roadmap-item">
 
-            <div class="roadmap-number">
-              PHASE 04
-            </div>
+          <div class="development-step">
+
+            <strong>
+              04 / Manufacturing
+            </strong>
 
             <h3>
-              Manufacturing
+              Supplier cooperation
             </h3>
 
             <p>
-              Work with qualified manufacturing partners to refine
-              tooling, quality control and production requirements.
+              Identifying manufacturing partners and
+              developing a reliable production process.
             </p>
 
           </div>
+
 
         </div>
 
@@ -1150,29 +1431,38 @@
     </section>
 
 
-    <!-- CHINA & MANUFACTURING -->
 
-    <section id="manufacturing" class="manufacturing">
+    <!-- =========================
+         CHINA & MANUFACTURING
+    ========================= -->
+
+    <section
+      id="manufacturing"
+      class="manufacturing"
+    >
 
       <div class="container">
 
         <div class="section-label">
-          China & manufacturing
+          China & Manufacturing
         </div>
 
+
         <h2 class="section-title">
-          Building the right manufacturing network.
+          Building the product
+          where manufacturing expertise matters.
         </h2>
 
+
         <p class="section-intro">
-          China offers a deep manufacturing ecosystem for filtration,
-          plastics, precision components, packaging and consumer products.
-          Aqua Blue is exploring supplier relationships and production
-          capabilities as the product moves through development.
+          Aqua Blue is researching manufacturing
+          capabilities, filtration components, materials
+          and supplier relationships in China.
         </p>
 
 
         <div class="manufacturing-grid">
+
 
           <div class="manufacturing-card">
 
@@ -1181,56 +1471,45 @@
             </h3>
 
             <p>
-              Identifying manufacturers with relevant experience in
-              water filtration, injection molding, seals, fittings
-              and consumer hardware.
+              Identifying manufacturers and component
+              suppliers with relevant experience in
+              filtration and consumer products.
             </p>
 
           </div>
+
 
 
           <div class="manufacturing-card">
 
             <h3>
-              Product sourcing
+              Engineering cooperation
             </h3>
 
             <p>
-              Evaluating materials, filtration media, components and
-              production methods with an emphasis on consistency and
-              long-term reliability.
+              Exploring technical cooperation for
+              prototyping, product refinement and
+              production preparation.
             </p>
 
           </div>
+
 
 
           <div class="manufacturing-card">
 
             <h3>
-              Quality control
+              Exhibitions & industry
             </h3>
 
             <p>
-              Developing clear specifications and inspection criteria
-              before moving toward larger production volumes.
+              Following water treatment and filtration
+              industry events to understand technologies,
+              suppliers and market developments.
             </p>
 
           </div>
 
-
-          <div class="manufacturing-card">
-
-            <h3>
-              Long-term cooperation
-            </h3>
-
-            <p>
-              The objective is to establish reliable supplier
-              relationships rather than simply find the lowest-cost
-              manufacturer.
-            </p>
-
-          </div>
 
         </div>
 
@@ -1239,9 +1518,15 @@
     </section>
 
 
-    <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+      id="contact"
+      class="contact"
+    >
 
       <div class="container">
 
@@ -1249,22 +1534,100 @@
           Contact
         </div>
 
+
         <h2 class="section-title">
-          Interested in the project?
+          Let’s build better
+          shower water.
         </h2>
 
+
         <p class="section-intro">
-          Aqua Blue is currently in the product research and development
-          stage. We are open to conversations with manufacturers,
+          Aqua Blue is currently in the product research
+          and development stage. We are open to conversations
+          with manufacturers, filtration technology suppliers,
           engineering partners and other relevant industry contacts.
         </p>
 
-        <a
-          href="mailto:hello@aquablue.example"
-          class="contact-email"
-        >
-          hello@aquablue.example
-        </a>
+
+        <div class="contact-card">
+
+
+          <div class="contact-person">
+
+            <div class="contact-avatar">
+              AB
+            </div>
+
+
+            <div>
+
+              <h3>
+                BAYRIYEV CHARY
+              </h3>
+
+              <p>
+                Founder & Product Development
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="contact-details">
+
+
+            <a
+              href="mailto:bayrievchary@gmail.com"
+              class="contact-item"
+            >
+
+              <span class="contact-icon">
+                ✉
+              </span>
+
+              <span>
+
+                <small>
+                  Email
+                </small>
+
+                bayrievchary@gmail.com
+
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="tel:+8613260058124"
+              class="contact-item"
+            >
+
+              <span class="contact-icon">
+                ☎
+              </span>
+
+              <span>
+
+                <small>
+                  China Phone
+                </small>
+
+                +86 132 6005 8124
+
+              </span>
+
+            </a>
+
+
+          </div>
+
+
+        </div>
+
 
         <p class="development-note">
           Product under development · 2026
@@ -1274,26 +1637,35 @@
 
     </section>
 
+
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
-    <div class="container footer-content">
-
-      <div class="footer-brand">
-        Aqua Blue
-      </div>
+    <div class="container footer-inner">
 
       <div>
-        © 2026 Aqua Blue. Product concept under development.
+        <span class="footer-brand">
+          Aqua Blue
+        </span>
+        · Product concept under development
+      </div>
+
+
+      <div>
+        © 2026 Aqua Blue
       </div>
 
     </div>
 
   </footer>
+
 
 </body>
 </html>
